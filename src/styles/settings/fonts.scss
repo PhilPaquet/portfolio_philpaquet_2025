@@ -3,11 +3,15 @@
    ========================================================================== */
 /// Font family
 :root {
-    --font-primary: 'Montserrat', sans-serif;
-    --font-secondary: 'Fira Code', monospace;
+    --font-primary: 'ClashDisplay-Semibold', sans-serif;
+    --font-secondary: 'Urbanist', sans-serif;
 
-    --font-size-content: #{typo(16px, 18px)};
+    --font-size-content: #{typo(15px, 33px)};
 
     /// Grosseur des textes
-    --font-size-h1: #{typo(28px, 42px)};
+    --font-size-h1: #{typo(80px, 250px)};
+    --font-size-h2: #{typo(50px, 150px)};
+    --font-size-h3: #{typo(32px, 85px)};
+    --font-size-h4: #{typo(24px, 50px)};
+    --font-size-btn: #{typo(25px, 50px)};
 }
