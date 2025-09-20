@@ -6,8 +6,39 @@
 a {
     color: inherit;
     text-decoration: none;
+}
+
+.btn_round {
+    border: 3px solid var(--color-black);
+    background-color: var(--color-bg-primary);
+
+    border-radius: 75px;
+    padding: 25px 50px;
+    position: relative;
+
+    &::after {
+        content: '';
+        background-color: var(--color-black);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        border-radius: inherit;
+        z-index: -1;
+
+        transform: translate(0, 0);
+
+        transition: transform 0.2s $ease-out-expo;
+    }
 
     &:hover {
-        color: var(--color-primary);
+        background-color: var(--color-dark-white);
+
+        &::after {
+            transform: translate(10px, 10px);
+        }
     }
 }
