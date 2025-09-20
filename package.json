@@ -1,0 +1,13 @@
+{
+  "name": "timtools",
+  "version": "1.5.x",
+  "private": true,
+  "type": "module",
+  "description": "Stack de développement frontend",
+  "author": {
+    "name": "Matt et JF"
+  },
+  "scripts": {
+    "postinstall": "node .timtools/scripts.js"
+  }
+}
