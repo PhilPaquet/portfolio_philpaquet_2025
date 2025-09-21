@@ -1,7 +1,13 @@
-.competences {
+.competences_accueil {
     h2 {
         text-align: center;
     }
+}
+.competences_accueil__text {
+    display: flex;
+    gap: var(--spacing-md);
+
+    padding-top: var(--spacing-md);
 }
 
 .competences__row {

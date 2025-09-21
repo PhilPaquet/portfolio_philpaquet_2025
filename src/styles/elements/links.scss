@@ -45,3 +45,65 @@ a {
         }
     }
 }
+
+.btn_fleche {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    position: relative;
+    &::after {
+        //Masque de la ligne
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        background-color: var(--color-white);
+
+        height: 3px;
+        width: 25%;
+        transition: transform 0.2s $ease-in-out-expo;
+
+        transform: translateX(300%);
+    }
+
+    &:hover {
+        &::after {
+            transform: translateX(0);
+        }
+
+        .btn_fleche__container {
+            .icon {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        background-color: var(--color-black);
+
+        height: 3px;
+        width: 100%;
+    }
+}
+
+.btn_fleche__container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    .icon {
+        font-size: 40px;
+        display: block;
+        transition: transform 0.2s $ease-out-expo;
+    }
+
+    h4 {
+        font-family: var(--font-primary);
+    }
+}
