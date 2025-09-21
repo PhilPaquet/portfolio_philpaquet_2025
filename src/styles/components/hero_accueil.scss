@@ -1,0 +1,102 @@
+.hero_accueil {
+    min-height: 100vh;
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-rows: 3fr;
+        grid-column-gap: var(--spacing-lg);
+
+        .hero_accueil__prenom {
+            grid-column: 2 / span 11;
+            display: flex;
+            justify-content: space-between;
+            grid-row: 1;
+
+            .points {
+                width: 150px; //largeur des points
+            }
+        }
+
+        .hero_accueil__nom {
+            grid-column: 5;
+            grid-row: 2;
+        }
+
+        .hero_accueil__media {
+            grid-column: 1 / span 5;
+            grid-row: 1 / span 2;
+            z-index: -5;
+
+            margin-top: 125px;
+        }
+    }
+}
+
+.hero_accueil__content {
+    display: flex;
+    flex-direction: column;
+    h3 {
+        align-self: flex-end;
+        padding-bottom: var(--spacing-lg);
+    }
+    grid-column: span 6;
+    grid-column-end: 13;
+    /*
+    max-height: 700px;
+    min-height: 82vh;
+    */
+    margin-top: 425px;
+
+    z-index: -5;
+}
+/*
+.hero_accueil__titre {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-column-gap: var(--spacing-lg);
+
+    :nth-child(1) {
+        grid-column: 2;
+        display: flex;
+    }
+
+    :nth-child(2) {
+        grid-column: 5;
+        grid-row: 2;
+    }
+}
+
+.hero_accueil__media {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--spacing-lg);
+
+    .hero_accueil__media {
+        grid-column: span 5;
+    }
+}
+
+.hero_accueil__container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-column-gap: var(--spacing-lg);
+    z-index: -10;
+
+    height: 90vh;
+
+    :nth-child(1) {
+        grid-column: span 5;
+    }
+
+    :nth-child(2) {
+        grid-column: span 6;
+        grid-column-end: 13;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+
+        gap: var(--spacing-md);
+    }
+}
+*/

@@ -16,3 +16,8 @@
     --font-size-btn: #{typo(25px, 50px)};
     --font-size-logo: #{typo(30px, 65px)};
 }
+
+em {
+    color: var(--color-primary);
+    font-style: normal !important;
+}
