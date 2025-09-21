@@ -16,6 +16,9 @@ a {
     padding: 25px 50px;
     position: relative;
 
+    width: fit-content;
+    height: fit-content;
+
     &::after {
         content: '';
         background-color: var(--color-black);

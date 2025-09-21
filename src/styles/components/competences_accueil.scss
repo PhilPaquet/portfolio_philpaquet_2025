@@ -1,0 +1,13 @@
+.competences {
+    h2 {
+        text-align: center;
+    }
+}
+
+.competences__row {
+    display: flex;
+    justify-content: space-between;
+    a {
+        margin: var(--spacing-lg) 0;
+    }
+}

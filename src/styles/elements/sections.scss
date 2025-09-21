@@ -1,0 +1,13 @@
+/* ==========================================================================
+   SECTIONS / ELEMENTS
+   ========================================================================== */
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+.section_notop {
+    padding: 0 0 var(--spacing-xl) 0;
+}
+.section_nobottom {
+    padding: var(--spacing-xl) 0 0 0;
+}
