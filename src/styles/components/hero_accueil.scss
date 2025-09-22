@@ -13,7 +13,8 @@
             grid-row: 1;
 
             .points {
-                width: 150px; //largeur des points
+                width: 300px; //largeur des points
+                
             }
         }
 
@@ -45,3 +46,11 @@
 
     z-index: -5;
 }
+
+.points .dot {
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      pointer-events: none; /* dots don't intercept mouse events */
+      /* size and background are set inline from JS, but you can override here */
+    }
