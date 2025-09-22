@@ -1,15 +1,20 @@
 .grille_projets_accueil {
-    .wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: var(--spacing-lg);
+    h2 {
+        padding-left: var(--spacing-xxl);
+        margin-bottom: var(--spacing-xl);
+    }
+}
 
-        :nth-child(odd) {
-            grid-column: 1;
-        }
-        :nth-child(even) {
-            grid-column: 2;
-        }
+.projets_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--spacing-lg);
+
+    :nth-child(odd) {
+        grid-column: 1;
+    }
+    :nth-child(even) {
+        grid-column: 2;
     }
 }
 
@@ -40,7 +45,9 @@
 
     .projet__media {
         aspect-ratio: 16/9;
+        overflow: hidden;
         img {
+            object-fit: cover;
             display: block;
         }
     }
@@ -63,5 +70,28 @@
     .projet__content_text {
         display: flex;
         justify-content: space-between;
+    }
+}
+
+.pattern_cercle {
+    position: relative;
+    svg {
+        position: absolute;
+        bottom: -150px;
+        right: -75px;
+        font-size: 500px;
+        color: var(--color-black);
+        z-index: -5;
+    }
+}
+.pattern_croix {
+    position: relative;
+    svg {
+        position: absolute;
+        bottom: -100px;
+        right: 0;
+        font-size: 300px;
+        color: var(--color-black);
+        z-index: -5;
     }
 }
