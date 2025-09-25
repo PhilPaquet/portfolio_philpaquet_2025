@@ -1,3 +1,7 @@
+/* ==========================================================================
+   GRILLE DE PROJETS / COMPONENTS
+   ========================================================================== */
+
 .grille_projets_accueil {
     h2 {
         padding-left: var(--spacing-xxl);
@@ -27,16 +31,14 @@
     display: flex;
     flex-direction: column;
     gap: 150px;
-    
 }
 
-.projets_container_right{
+.projets_container_right {
     margin-top: 150px;
 }
-.grille_projets_container{
+.grille_projets_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
 }
 .projet_container {
     padding: 0 var(--spacing-lg);
