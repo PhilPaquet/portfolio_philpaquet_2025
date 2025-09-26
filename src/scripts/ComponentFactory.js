@@ -1,9 +1,12 @@
 import Header from './components/Header.js';
+import Scroller from './components/Scroller.js';
+
 export default class ComponentFactory {
   constructor() {
     this.componentInstances = [];
     this.componentList = {
       Header,
+      Scroller,
     };
     this.init();
   }
