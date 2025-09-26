@@ -25,11 +25,19 @@
     grid-column: 7 / span 6;
     grid-row: 2;
 
+    overflow: hidden;
+
+    height: 75vh;
+
     .etape__media_image {
         aspect-ratio: 16/9;
         overflow: hidden;
         display: flex;
         flex-direction: column;
+
+        //margin-bottom: var(--spacing-md);
+
+        margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
         gap: var(--spacing-lg);
         img {
             display: block;
