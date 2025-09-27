@@ -43,7 +43,7 @@
     }
     .icons_projet_container {
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: space-between;
         padding: var(--spacing-lg) 0;
 
@@ -56,9 +56,6 @@
                 width: 100px;
                 height: 100px;
             }
-        }
-        .points_icons_projet {
-            height: 100% !important;
         }
     }
 }

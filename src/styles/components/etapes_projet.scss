@@ -13,6 +13,14 @@
             grid-column: 2;
             grid-row: 1;
         }
+
+        h3 {
+            padding: var(--spacing-md) 0;
+        }
+
+        .etape_projet__nav {
+            padding-top: var(--spacing-md);
+        }
     }
 }
 
@@ -37,7 +45,7 @@
 
         //margin-bottom: var(--spacing-md);
 
-        margin: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+        margin-bottom: var(--spacing-md);
         gap: var(--spacing-lg);
         img {
             display: block;
