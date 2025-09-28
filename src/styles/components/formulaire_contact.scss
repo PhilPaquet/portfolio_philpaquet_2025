@@ -1,0 +1,15 @@
+.form__section {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.form__section h4 {
+    grid-column: 2 / span 5;
+}
+
+.form__section input,
+.form__section textarea {
+    grid-column: 7 / span 5;
+}
