@@ -5,3 +5,19 @@
         align-items: stretch;
     }
 }
+
+.reseaux_contact__contact {
+    display: flex;
+    justify-content: space-between;
+
+    padding: var(--spacing-lg) 0;
+}
+
+.reseaux_contact__reseaux {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn_reseau {
+    display: flex;
+}
