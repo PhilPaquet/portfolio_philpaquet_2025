@@ -49,27 +49,33 @@
             <form action="" class="form" autocomplete="off" data-component="Form">
                 <fieldset class="form__grid">
                     <!-- Section 1 -->
-                    <div class="form__section form__section--1">
-                        <h4 class="form__label">Salut Philippe, je m’appelle</h4>
-                        <input class="input__element" type="text" name="fullname" id="fullname" placeholder="Votre nom complet" required />
+                    <div class="input input--1">
+                        <label class="input__label" for="fullname"><h4>Salut Philippe, je m’appelle</h4></label>
+                        <input class="input__element border_text" type="text" name="fullname" id="fullname" placeholder="Votre nom complet" required />
                     </div>
 
                     <!-- Section 2 -->
-                    <div class="form__section form__section--2">
-                        <h4 class="form__label">Tu peux me répondre à</h4>
-                        <input class="input__element" type="email" name="email" id="email" placeholder="VotreCourriel@domain.com" required />
+                    <div class="input input--2">
+                        <label class="input__label" for="email"><h4>Tu peux me répondre à</h4></label>
+                        <input class="input__element border_text" type="email" name="email" id="email" placeholder="VotreCourriel@domain.com" required />
                     </div>
 
                     <!-- Section 3 -->
-                    <div class="form__section form__section--3">
-                        <h4 class="form__label">Je te contacte à propos de</h4>
-                        <textarea class="input__element" name="message" id="message" placeholder="Votre message" required></textarea>
+                    <div class="input textarea input--3">
+                        <label class="input__label" for="message"><h4>Je te contacte à propos de</h4></label>
+                        <textarea class="input__element border_text" name="message" id="message" placeholder="Votre message" required></textarea>
+                        <footer class="form__footer">
+                            <a href="#" class="btn_fleche">
+                                <div class="btn_fleche__container">
+                                    <h4>Envoyer</h4>
+                                    <svg class="icon">
+                                        <use href="#icon-icon_fleche"></use>
+                                    </svg>
+                                </div>
+                            </a>
+                        </footer>
                     </div>
                 </fieldset>
-
-                <footer class="form__footer">
-                    <button class="form__btn">Envoyer</button>
-                </footer>
             </form>
         </div>
     </div>
