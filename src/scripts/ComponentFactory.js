@@ -1,4 +1,5 @@
 import Header from './components/Header.js';
+import Points from './components/Points.js';
 import Scroller from './components/Scroller.js';
 
 export default class ComponentFactory {
@@ -7,6 +8,7 @@ export default class ComponentFactory {
     this.componentList = {
       Header,
       Scroller,
+      Points,
     };
     this.init();
   }

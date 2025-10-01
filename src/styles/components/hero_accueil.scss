@@ -13,8 +13,18 @@
             grid-row: 1;
 
             .points {
-                width: 300px; //largeur des points
-                
+                width: 400px; //largeur des points
+                margin-top: 45px;
+
+                background-image: radial-gradient(
+                    circle,
+                    var(--color-black) 8px,
+                    rgba(0, 0, 0, 0) 9px
+                );
+                background-size: 40px 40px; /* spacing */
+
+                /* Optional: repeat in both directions */
+                background-repeat: repeat;
             }
         }
 
@@ -46,11 +56,3 @@
 
     z-index: -5;
 }
-
-.points .dot {
-      position: absolute;
-      display: block;
-      border-radius: 50%;
-      pointer-events: none; /* dots don't intercept mouse events */
-      /* size and background are set inline from JS, but you can override here */
-    }

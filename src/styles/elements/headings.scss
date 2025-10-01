@@ -12,6 +12,11 @@ h6 {
     line-height: 1;
     font-weight: bold;
     margin: 0;
+
+    &::selection {
+        background-color: var(--color-primary); /* highlight background */
+        color: var(--color-white); /* text color while selected */
+    }
 }
 
 h1 {
@@ -44,4 +49,15 @@ h6 {
 
 em {
     font-style: italic;
+    &::selection {
+        background-color: var(--color-primary); /* highlight background */
+        color: var(--color-white); /* text color while selected */
+    }
+}
+
+p {
+    &::selection {
+        background-color: var(--color-primary); /* highlight background */
+        color: var(--color-white); /* text color while selected */
+    }
 }

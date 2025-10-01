@@ -20,11 +20,15 @@
     display: grid;
     grid-column-gap: var(--spacing-lg);
     grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-template-rows: repeat(2, 1fr);
+
+    padding-bottom: var(--spacing-lg);
+    //grid-template-rows: repeat(2, 1fr);
 
     .input__label {
         grid-column: 2 / span 5;
         grid-row: 1;
+
+        padding: var(--spacing-sm) 0;
         cursor: pointer;
     }
 
@@ -65,5 +69,6 @@
 .textarea {
     .input__element {
         resize: none;
+        height: 350px;
     }
 }
