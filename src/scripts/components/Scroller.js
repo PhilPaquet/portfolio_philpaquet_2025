@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 import { ScrollSmoother } from 'gsap/ScrollSmoother.js';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js';
 
 export default class Scroller {
   constructor(element) {
@@ -15,11 +16,21 @@ export default class Scroller {
   }
 
   init() {
-    const scroller = ScrollSmoother.create({
+    this.smoother = ScrollSmoother.create({
       smooth: 1,
       effects: true,
       smoothTouch: 0.1,
       ease: 'expo.out',
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          this.smoother.scrollTo(target, true, 'top top');
+        }
+      });
     });
   }
 

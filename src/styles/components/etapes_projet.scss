@@ -1,26 +1,24 @@
 /* ==========================================================================
    ÉTAPES / COMPONENTS 
    ========================================================================== */
-.etapes_projet {
-    .wrapper {
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-template-rows: 2fr;
-        grid-column-gap: var(--spacing-lg);
-        grid-row-gap: var(--spacing-lg);
+.etape_projet {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: 2fr;
+    grid-column-gap: var(--spacing-lg);
+    grid-row-gap: var(--spacing-lg);
 
-        h2 {
-            grid-column: 2;
-            grid-row: 1;
-        }
+    h2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
 
-        h3 {
-            padding: var(--spacing-md) 0;
-        }
+    h3 {
+        padding: var(--spacing-md) 0;
+    }
 
-        .etape_projet__nav {
-            padding-top: var(--spacing-md);
-        }
+    .etape_projet__nav {
+        padding-top: var(--spacing-md);
     }
 }
 
@@ -48,6 +46,9 @@
         margin-bottom: var(--spacing-md);
         gap: var(--spacing-lg);
         img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
             display: block;
         }
     }
