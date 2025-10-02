@@ -1,5 +1,5 @@
 import Header from './components/Header.js';
-
+import Tippy from './components/Tippy.js';
 import Scroller from './components/Scroller.js';
 
 export default class ComponentFactory {
@@ -7,6 +7,7 @@ export default class ComponentFactory {
     this.componentInstances = [];
     this.componentList = {
       Header,
+      Tippy,
       Scroller,
     };
     this.init();
