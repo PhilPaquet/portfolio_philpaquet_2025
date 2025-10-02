@@ -46,6 +46,44 @@ a {
     }
 }
 
+.btn_round_small {
+    border: 3px solid var(--color-black);
+    background-color: var(--color-bg-primary);
+
+    border-radius: 75px;
+    padding: 20px 35px;
+    position: relative;
+
+    width: fit-content;
+    height: fit-content;
+
+    &::after {
+        content: '';
+        background-color: var(--color-black);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        border-radius: inherit;
+        z-index: -1;
+
+        transform: translate(0, 0);
+
+        transition: transform 0.2s $ease-out-expo;
+    }
+
+    &:hover {
+        background-color: var(--color-dark-white);
+
+        &::after {
+            transform: translate(10px, 10px);
+        }
+    }
+}
+
 .btn_fleche {
     display: flex;
     flex-direction: column;

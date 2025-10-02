@@ -48,7 +48,6 @@ h6 {
 }
 
 em {
-    font-style: italic;
     &::selection {
         background-color: var(--color-primary); /* highlight background */
         color: var(--color-white); /* text color while selected */

@@ -16,6 +16,7 @@
             font-family: var(--font-primary);
             font-size: var(--font-size-logo);
             width: 100%;
+            
             margin: 0;
         }
 
@@ -47,6 +48,9 @@
     }
 
     .menu_header {
+        h4{
+            font-size: var(--font-size-header);
+        }
         ul {
             display: flex;
             list-style: none;
