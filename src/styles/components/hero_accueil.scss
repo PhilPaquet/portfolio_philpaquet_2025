@@ -11,6 +11,9 @@
             display: flex;
             justify-content: space-between;
             grid-row: 1;
+            pointer-events: none;
+
+            z-index: 5;
 
             .points {
                 width: 400px; //largeur des points
@@ -30,15 +33,30 @@
 
         .hero_accueil__nom {
             grid-column: 5;
+            z-index: 5;
             grid-row: 2;
+
+            pointer-events: none;
         }
 
         .hero_accueil__media {
             grid-column: 1 / span 5;
             grid-row: 1 / span 2;
-            z-index: -5;
+            z-index: 1;
+
+            display: block;
+
+            pointer-events: auto;
+
+            cursor: pointer;
 
             margin-top: 125px;
+            overflow: hidden;
+            img {
+                margin-top: 250px;
+                margin-left: 100px;
+                transform: rotate(90deg) scaleY(-100%) scale(2);
+            }
         }
     }
 }
