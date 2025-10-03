@@ -1,5 +1,6 @@
 import Header from './components/Header.js';
 import Scroller from './components/Scroller.js';
+import YouTube from './components/YouTube.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -7,6 +8,7 @@ export default class ComponentFactory {
     this.componentList = {
       Header,
       Scroller,
+      YouTube,
     };
     this.init();
   }
