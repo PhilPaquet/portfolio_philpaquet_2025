@@ -1,22 +1,24 @@
 .hero_contact {
-    .hero_contact__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
-        .points {
-            width: 550px; //largeur des points
-            margin-top: 40px;
+    h2 {
+        font-family: var(--font-primary);
+        font-size: var(--font-size-h1);
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    .points {
+        width: 550px; //largeur des points
+        margin-top: 40px;
 
-            background-image: radial-gradient(
-                circle,
-                var(--color-black) 8px,
-                rgba(0, 0, 0, 0) 9px
-            );
-            background-size: 40px 40px; /* spacing */
+        background-image: radial-gradient(
+            circle,
+            var(--color-black) 8px,
+            rgba(0, 0, 0, 0) 9px
+        );
+        background-size: 40px 40px; /* spacing */
 
-            /* Optional: repeat in both directions */
-            background-repeat: repeat;
-        }
+        /* Optional: repeat in both directions */
+        background-repeat: repeat;
     }
 }
 
@@ -30,6 +32,7 @@
 .reseaux_contact__reseaux {
     display: flex;
     justify-content: space-between;
+    padding: var(--spacing-lg) 0;
 }
 
 .btn_reseau {

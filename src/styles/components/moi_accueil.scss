@@ -37,7 +37,7 @@
     img {
         object-fit: cover;
         display: block;
-        transform: translateY(-5%);
+        transform: translateY(-5%) scale(1.01); //scale pour fix petit espace à droite sur firefox
     }
 }
 
