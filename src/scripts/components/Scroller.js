@@ -8,6 +8,7 @@ export default class Scroller {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
     this.options = {
       hasPinItems: false,
+      hasScrollerTitle: false,
     };
 
     this.element = element;
@@ -70,10 +71,21 @@ export default class Scroller {
     }
   }
 
+  initTitles() {
+    const titles = document.querySelectorAll('.scrolling_title');
+    for (let i = 0; i < titles.length; i++) {
+      const title = titles[i];
+    }
+  }
+
   setOptions() {
     if ('pinItems' in this.element.dataset) {
       this.options.hasPinItems = true;
       this.initPins();
+    }
+    if ('scrollerTitle' in this.element.dataset) {
+      this.options.hasScrollerTitle = true;
+      this.initTitles();
     }
   }
 }
