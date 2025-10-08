@@ -4,16 +4,18 @@
 
 .grille_projets_accueil {
     h2 {
-        padding-left: var(--spacing-xxl);
         margin-bottom: var(--spacing-xl);
+        display: inline-block;
+        width: auto;
     }
 }
+
 /*
-.projets_container {
+.grille_projets_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    //grid-template-rows: repeat(3, minmax(0, 1fr));
-    column-gap: var(--spacing-lg);
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    //column-gap: var(--spacing-lg);
     row-gap: var(--spacing-xxl);
 
     :nth-child(odd) {
@@ -21,25 +23,25 @@
     }
     :nth-child(even) {
         grid-column: 2;
-        
     }
-
-    
 }
 */
+
 .projets_container {
     display: flex;
     flex-direction: column;
     gap: 150px;
 }
-
+/*
 .projets_container_right {
     margin-top: 150px;
-}
+}*/
+
 .grille_projets_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
 .projet_container {
     padding: 0 var(--spacing-lg);
 
@@ -95,6 +97,10 @@
         justify-content: space-between;
     }
 }
+
+/*
+   PATTERNS
+   ========================================================================== */
 
 .pattern_points {
     position: relative;

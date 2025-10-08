@@ -75,6 +75,21 @@ export default class Scroller {
     const titles = document.querySelectorAll('.scrolling_title');
     for (let i = 0; i < titles.length; i++) {
       const title = titles[i];
+
+      const container = title.closest('.wrapper');
+
+      console.log(container);
+
+      gsap.to(title, {
+        x: () => container.offsetWidth - title.offsetWidth,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: title,
+          /*start: 'bottom bottom',
+          end: 'top top',*/
+          scrub: true,
+        },
+      });
     }
   }
 

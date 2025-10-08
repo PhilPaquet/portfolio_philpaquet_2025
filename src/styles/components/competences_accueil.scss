@@ -1,8 +1,10 @@
 .competences_accueil {
     h2 {
-        text-align: center;
+        display: inline-block;
+        width: auto;
     }
 }
+
 .competences_accueil__text {
     display: flex;
     gap: var(--spacing-md);
