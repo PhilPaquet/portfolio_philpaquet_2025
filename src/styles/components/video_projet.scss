@@ -5,9 +5,10 @@
 .youtube {
     .wrapper {
         display: grid;
-        grid-template-columns: 1fr 10fr 1fr;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-column-gap: var(--spacing-md);
         .video_container {
-            grid-column: 2;
+            grid-column: 2 / span 10;
             .video {
                 aspect-ratio: 16/9;
                 overflow: hidden;

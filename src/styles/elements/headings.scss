@@ -60,3 +60,10 @@ p {
         color: var(--color-white); /* text color while selected */
     }
 }
+
+strong {
+    &::selection {
+        background-color: var(--color-primary); /* highlight background */
+        color: var(--color-white); /* text color while selected */
+    }
+}

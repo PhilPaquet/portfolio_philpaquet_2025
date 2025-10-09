@@ -32,6 +32,10 @@
 
     background-color: var(--color-bg-secondary);
 
+    .text_footer {
+        max-width: 1100px;
+    }
+
     .wrapper {
         display: flex;
         justify-content: space-between;

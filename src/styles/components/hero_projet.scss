@@ -7,7 +7,7 @@
     .wrapper {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        grid-column-gap: var(--spacing-lg);
+        grid-column-gap: var(--spacing-md);
         //grid-row-gap: var(--spacing-md);
     }
 }
@@ -63,6 +63,7 @@
             width: 100%; //largeur des points
 
             margin-left: var(--spacing-xl);
+            margin-right: 30px;
 
             margin-top: -10px;
 
