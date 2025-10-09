@@ -16,7 +16,7 @@
             font-family: var(--font-primary);
             font-size: var(--font-size-logo);
             width: 100%;
-            
+
             margin: 0;
         }
 
@@ -48,7 +48,7 @@
     }
 
     .menu_header {
-        h4{
+        h4 {
             font-size: var(--font-size-header);
         }
         ul {
@@ -62,5 +62,71 @@
                 display: flex;
             }
         }
+    }
+}
+
+/*
+   BTN burger
+   ========================================================================== */
+
+.header__toggle {
+    --bar-height: 5px;
+    --bar-spacer: 8px;
+    --bar-width: 50px;
+
+    //background-color: transparent;
+    display: none;
+    background-color: var(--color-white);
+    //outline: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    width: var(--bar-width);
+    height: var(--bar-width);
+    z-index: 10;
+
+    span {
+        background: var(--color-black);
+
+        height: var(--bar-height);
+        width: 100%;
+        position: absolute;
+        top: calc(50% - var(--bar-height) / 2);
+        left: calc(50% - var(--bar-width) / 2);
+        transition: 0.3s all $ease-out-expo;
+
+        &:nth-child(1) {
+            top: calc(
+                50% - var(--bar-height) / 2 - var(--bar-spacer) -
+                    var(--bar-spacer)
+            );
+        }
+
+        &:nth-child(3) {
+            top: calc(
+                50% - var(--bar-height) / 2 + var(--bar-spacer) +
+                    var(--bar-spacer)
+            );
+        }
+    }
+
+    .nav-is-active & {
+        span {
+            top: calc(50% - var(--bar-height) / 2);
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+                transform: scaleX(0);
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    /* Media query */
+    @media screen and (max-width: $breakpoint-md) {
+        display: block;
     }
 }
