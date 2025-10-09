@@ -5,7 +5,7 @@
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-template-rows: 3fr;
-        grid-column-gap: var(--spacing-lg);
+        grid-column-gap: var(--spacing-md);
 
         .hero_accueil__prenom {
             grid-column: 2 / span 11;
