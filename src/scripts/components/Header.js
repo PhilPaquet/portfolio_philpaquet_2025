@@ -2,7 +2,7 @@ export default class Header {
   constructor(element) {
     this.element = element;
     this.options = {
-      threshold: 0.1,
+      threshold: 0,
       alwaysShowHeader: false,
     };
     this.scrollPosition = 0;
@@ -14,7 +14,6 @@ export default class Header {
 
   init() {
     this.setOptions();
-
     window.addEventListener('scroll', this.onScroll.bind(this));
   }
 
@@ -27,12 +26,21 @@ export default class Header {
     }
   }
 
+  isPinnedSectionActive() {
+    return document.querySelector('.js-pinned.is-pinned') !== null;
+  }
+
   onScroll() {
     this.lastScrollPosition = this.scrollPosition;
     this.scrollPosition = document.scrollingElement.scrollTop;
 
-    this.setHeaderState();
-    this.setDirections();
+    if (this.isPinnedSectionActive()) {
+      this.html.classList.add('header-is-hidden', 'is-scrolling-down');
+      this.html.classList.remove('is-scrolling-up');
+    } else {
+      this.setHeaderState();
+      this.setDirections();
+    }
   }
 
   setHeaderState() {

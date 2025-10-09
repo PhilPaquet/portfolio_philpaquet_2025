@@ -1,6 +1,12 @@
 .header {
     z-index: 100;
 
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    transition: transform 0.2s ease-out;
+
     .wrapper {
         display: flex;
         justify-content: space-between;
@@ -62,6 +68,9 @@
                 display: flex;
             }
         }
+    }
+    .header-is-hidden.is-scrolling-down &:not(.nav-is-active) {
+        transform: translateY(-100%);
     }
 }
 

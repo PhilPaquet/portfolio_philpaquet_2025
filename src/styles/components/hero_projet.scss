@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .hero_projet {
+    padding-top: calc(var(--spacing-xl) + 50px);
     .wrapper {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));

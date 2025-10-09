@@ -46,7 +46,25 @@ export default class Scroller {
       const nbImagePanels = imagePanels.length - 1;
       const buffer = 200;
 
+      ScrollTrigger.create({
+        pin: pinnedItem,
+        trigger: pinnedItem,
+        start: 'center center',
+        end: () =>
+          '+=' + (pinnedItem.offsetHeight * nbImagePanels * 0.5 + buffer),
+        scrub: true,
+        //markers: true,
+        onToggle: (self) => {
+          if (self.isActive) {
+            pinnedItem.classList.add('is-pinned');
+          } else {
+            pinnedItem.classList.remove('is-pinned');
+          }
+        },
+      });
+
       //console.log(pinnedItem);
+      /*
       ScrollTrigger.create({
         pin: pinnedItem,
         trigger: pinnedItem,
@@ -56,7 +74,7 @@ export default class Scroller {
         scrub: true,
         //markers: true,
       });
-
+*/
       gsap.to(imagePanels, {
         yPercent: -100 * nbImagePanels,
         ease: 'none',
