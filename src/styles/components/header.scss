@@ -19,6 +19,7 @@
         height: 80px;
         //padding: 0 10px;
         position: relative;
+        transition: transform 0.2s $ease-out-expo;
 
         .logo_image {
             display: block;
@@ -51,19 +52,15 @@
             z-index: -1;
 
             transform: translate(0, 0);
-
+            
             transition: transform 0.2s $ease-out-expo;
-        }
+            }
+            }*/
 
         &:hover {
-            background-color: var(--color-dark-white);
-
-            &::after {
-                transform: translate(10px, 10px);
-            }
-        }*/
+            transform: rotate(60deg);
+        }
     }
-
     .menu_header {
         h4 {
             font-size: var(--font-size-header);
