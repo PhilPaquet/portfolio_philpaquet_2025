@@ -6,6 +6,14 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js';
 export default class Scroller {
   constructor(element) {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+    // Bloquer le scroll natif le plus tôt possible
+    if (window.location.hash) {
+      history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+
     this.options = {
       hasPinItems: false,
       hasScrollerTitle: false,
@@ -24,6 +32,7 @@ export default class Scroller {
       ease: 'expo.out',
     });
 
+    // Ancres sur la même page
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', (e) => {
         e.preventDefault();
@@ -33,6 +42,52 @@ export default class Scroller {
         }
       });
     });
+
+    // Liens multi-pages avec ancres
+    document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
+      const href = anchor.getAttribute('href');
+      if (href.startsWith('#')) return;
+
+      anchor.addEventListener('click', (e) => {
+        const [page, hash] = href.split('#');
+        const currentPage =
+          window.location.pathname.split('/').pop() || 'index.html';
+
+        if (
+          page === currentPage ||
+          page === `./${currentPage}` ||
+          (page === 'index.html' &&
+            (currentPage === '' || currentPage === 'index.html'))
+        ) {
+          e.preventDefault();
+          const target = document.querySelector(`#${hash}`);
+          if (target) {
+            this.smoother.scrollTo(target, true, 'top top');
+          }
+        }
+      });
+    });
+
+    // Récupérer le hash sauvegardé
+    const pendingHash = sessionStorage.getItem('pendingHash');
+
+    if (pendingHash) {
+      // Nettoyer le sessionStorage
+      sessionStorage.removeItem('pendingHash');
+
+      // Remettre le hash dans l'URL
+      history.replaceState(null, null, pendingHash);
+
+      // Attendre que tout soit chargé
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const target = document.querySelector(pendingHash);
+          if (target && this.smoother) {
+            this.smoother.scrollTo(target, true, 'top top');
+          }
+        }, 500); //Pour changer le délais ou on voit le hero quand on reviens au index.html
+      });
+    }
   }
 
   //PIN CONTROLS

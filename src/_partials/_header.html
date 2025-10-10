@@ -25,6 +25,29 @@
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
+
+    <!-- Ce script est utile pour que mes boutons de header fonctionnent-->
+    <script>
+      // Ce script s'exécute IMMÉDIATEMENT, avant tout defer
+      (function() {
+        if (!window.location.hash) return;
+
+        // Sauvegarder le hash
+        const hash = window.location.hash;
+
+        // Supprimer le hash pour empêcher le scroll automatique
+        if (history.replaceState) {
+          history.replaceState(null, null, window.location.pathname + window.location.search);
+        } else {
+          // Fallback pour très vieux navigateurs
+          window.location.hash = '';
+        }
+
+        // Stocker le hash pour le récupérer plus tard
+        sessionStorage.setItem('pendingHash', hash);
+      })();
+    </script>
+
     <script>
       // À décommenter lorsque rendu dans le fichier .php pour que les icônes fonctionnent dans WP
       // iconsPath = '<?php bloginfo('template_url') ?>/dist/';
@@ -53,19 +76,19 @@
                 <ul>
                 
                   <li>          
-                    <a href="#competences" class="btn_round_small">
+                    <a href="index.html#competences" class="btn_round_small">
                       <h4>À propos</h4>
                     </a>
                   </li>
 
                   <li>
-                    <a href="#projets" class="btn_round_small">
+                    <a href="index.html#projets" class="btn_round_small">
                       <h4>Projets</h4>
                     </a>
                   </li>
                 
                   <li>
-                    <a href="#contact" class="btn_round_small">
+                    <a href="index.html#contact" class="btn_round_small">
                       <h4>Contact</h4>
                     </a>
                   </li>
