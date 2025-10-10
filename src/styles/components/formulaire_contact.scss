@@ -30,6 +30,14 @@
 
         padding: var(--spacing-sm) 0;
         cursor: pointer;
+
+        position: relative;
+
+        span {
+            position: absolute;
+            top: -25px;
+            left: 0;
+        }
     }
 
     .input__element {
@@ -63,6 +71,26 @@
     .form__footer {
         margin-top: var(--spacing-md);
         grid-column: 7;
+        .btn_fleche {
+            background: none;
+            border: none;
+            outline: none;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+            font: inherit;
+            text-align: left;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background: none;
+                box-shadow: none;
+            }
+        }
     }
 }
 

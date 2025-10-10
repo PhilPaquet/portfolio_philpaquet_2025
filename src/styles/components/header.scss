@@ -7,6 +7,8 @@
 
     transition: transform 0.2s ease-out;
 
+    pointer-events: none;
+
     .wrapper {
         max-width: calc($breakpoint-lg + 200px);
         display: flex;
@@ -20,6 +22,8 @@
         //padding: 0 10px;
         position: relative;
         transition: transform 0.2s $ease-out-expo;
+
+        pointer-events: all;
 
         .logo_image {
             display: block;
@@ -74,6 +78,7 @@
 
             li {
                 display: flex;
+                pointer-events: all;
             }
         }
     }

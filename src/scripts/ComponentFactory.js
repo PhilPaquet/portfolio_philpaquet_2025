@@ -1,6 +1,7 @@
 import Header from './components/Header.js';
 import Scroller from './components/Scroller.js';
 import YouTube from './components/YouTube.js';
+import Form from './components/Form.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -9,6 +10,7 @@ export default class ComponentFactory {
       Header,
       Scroller,
       YouTube,
+      Form,
     };
     this.init();
   }

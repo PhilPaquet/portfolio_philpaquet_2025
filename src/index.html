@@ -14,7 +14,12 @@
                 <!---->
 
                 <!--<div class="hero_accueil__container">-->
-                <a href="#projets" class="hero_accueil__media border"><img src="assets/images/RobotPosed.webp" alt="" /></a>
+                <div class="hero_accueil__media_container">
+                    <a href="#projets" class="hero_accueil__media border"><img src="assets/images/RobotPosed.webp" alt="" /></a>
+                    <svg class="icon icon_hero_accueil" data-speed="0.95">
+                        <use href="#icon-icon_pattern_cercle"></use>
+                    </svg>
+                </div>
 
                 <div class="hero_accueil__content">
                     <h3>
@@ -176,7 +181,7 @@
                             </a>
                             <div class="points"></div>
                         </div>
-                        <div class="projet_container pattern_cercle">
+                        <div class="projet_container">
                             <a href="amarsissage.html" class="projet">
                                 <div class="projet__media border">
                                     <img src="./assets/images/thumbnail_robot.webp" alt="Image à la une du projet Robot CGI" />
@@ -189,10 +194,6 @@
                                     </div>
                                 </div>
                             </a>
-
-                            <svg class="icon">
-                                <use href="#icon-icon_pattern_cercle"></use>
-                            </svg>
                         </div>
 
                         <div class="projet_container pattern_croix">
@@ -215,7 +216,7 @@
                         </div>
                     </div>
                     <div class="projets_container projets_container_right">
-                        <div class="projet_container pattern_croix">
+                        <div class="projet_container">
                             <a href="amarsissage.html" class="projet">
                                 <div class="projet__media border">
                                     <img src="./assets/images/thumbnail_bsc.webp" alt="Image à la une du projet Baie-Sainte-Catherine" />
@@ -228,12 +229,9 @@
                                     </div>
                                 </div>
                             </a>
-                            <svg class="icon">
-                                <use href="#icon-icon_pattern_croix"></use>
-                            </svg>
                         </div>
 
-                        <div class="projet_container pattern_points">
+                        <div class="projet_container pattern_cercle">
                             <a href="amarsissage.html" class="projet">
                                 <div class="projet__media border">
                                     <img src="./assets/images/thumbnail_tagball.webp" alt="Image à la une du projet Tag ball" />
@@ -247,10 +245,12 @@
                                 </div>
                             </a>
 
-                            <div class="points"></div>
+                            <svg class="icon">
+                                <use href="#icon-icon_pattern_cercle"></use>
+                            </svg>
                         </div>
 
-                        <div class="projet_container pattern_cercle">
+                        <div class="projet_container">
                             <a href="amarsissage.html" class="projet">
                                 <div class="projet__media border">Je suis une image</div>
                                 <div class="projet__content border_text">
@@ -261,9 +261,6 @@
                                     </div>
                                 </div>
                             </a>
-                            <svg class="icon">
-                                <use href="#icon-icon_pattern_cercle"></use>
-                            </svg>
                         </div>
                     </div>
                 </div>
@@ -314,7 +311,9 @@
                             <fieldset class="form__grid">
                                 <!-- Section 1 -->
                                 <div class="input input--1">
-                                    <label class="input__label" for="fullname"><h4>Salut Philippe, je m’appelle</h4></label>
+                                    <label class="input__label" for="fullname">
+                                        <h4>Salut Philippe, je m’appelle</h4>
+                                    </label>
                                     <input
                                         class="input__element border_text"
                                         type="text"
@@ -327,7 +326,9 @@
 
                                 <!-- Section 2 -->
                                 <div class="input input--2">
-                                    <label class="input__label" for="email"><h4>Tu peux me répondre à</h4></label>
+                                    <label class="input__label" for="email">
+                                        <h4>Tu peux me répondre à</h4>
+                                    </label>
                                     <input
                                         class="input__element border_text"
                                         type="email"
@@ -340,17 +341,19 @@
 
                                 <!-- Section 3 -->
                                 <div class="input textarea input--3">
-                                    <label class="input__label" for="message"><h4>Je te contacte à propos de</h4></label>
+                                    <label class="input__label" for="message">
+                                        <h4>Je te contacte à propos de</h4>
+                                    </label>
                                     <textarea class="input__element border_text" name="message" id="message" placeholder="Votre message" required></textarea>
                                     <footer class="form__footer">
-                                        <a href="#" class="btn_fleche">
+                                        <button type="submit" class="btn_fleche form__btn">
                                             <div class="btn_fleche__container">
                                                 <h4>Envoyer</h4>
                                                 <svg class="icon">
                                                     <use href="#icon-icon_fleche"></use>
                                                 </svg>
                                             </div>
-                                        </a>
+                                        </button>
                                     </footer>
                                 </div>
                             </fieldset>

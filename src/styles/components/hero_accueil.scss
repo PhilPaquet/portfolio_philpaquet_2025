@@ -40,23 +40,39 @@
             pointer-events: none;
         }
 
-        .hero_accueil__media {
+        .hero_accueil__media_container {
             grid-column: 1 / span 5;
             grid-row: 1 / span 2;
-            z-index: 1;
 
-            display: block;
+            position: relative;
 
-            pointer-events: auto;
+            .hero_accueil__media {
+                --margin: 125px;
 
-            cursor: pointer;
+                display: block;
+                z-index: 1;
+                height: calc(100% - var(--margin));
 
-            margin-top: 125px;
-            overflow: hidden;
-            img {
-                margin-top: 250px;
-                margin-left: 100px;
-                transform: rotate(90deg) scaleY(-100%) scale(2);
+                pointer-events: auto;
+                margin-top: var(--margin);
+
+                cursor: pointer;
+
+                overflow: hidden;
+
+                position: relative;
+                img {
+                    margin-top: 250px;
+                    margin-left: 100px;
+                    transform: rotate(90deg) scaleY(-100%) scale(2);
+                }
+            }
+
+            .icon_hero_accueil {
+                position: absolute;
+                bottom: -75px;
+                right: -100px;
+                font-size: 500px;
             }
         }
     }
