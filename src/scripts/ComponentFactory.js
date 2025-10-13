@@ -2,6 +2,7 @@ import Header from './components/Header.js';
 import Scroller from './components/Scroller.js';
 import YouTube from './components/YouTube.js';
 import Form from './components/Form.js';
+import TextAnim from './components/TextAnim.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -11,6 +12,7 @@ export default class ComponentFactory {
       Scroller,
       YouTube,
       Form,
+      TextAnim,
     };
     this.init();
   }

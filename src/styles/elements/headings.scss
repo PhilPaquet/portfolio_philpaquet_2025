@@ -67,3 +67,7 @@ strong {
         color: var(--color-white); /* text color while selected */
     }
 }
+
+span::selection {
+    background: red;
+}
