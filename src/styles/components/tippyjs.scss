@@ -1,0 +1,27 @@
+/* ==========================================================================
+   TIPPY / COMPONENT
+   ========================================================================== */
+
+.tippy-box[data-theme~='custom'] {
+    border: 3px solid var(--color-black);
+    background-color: var(--color-bg-primary);
+
+    border-radius: 75px;
+    padding: 15px 30px;
+
+    font-size: var(--font-size-p);
+    font-family: var(--font-secondary);
+    line-height: 1;
+    font-weight: 600;
+    width: auto !important; /* Let it resize automatically */
+    max-width: none !important; /* Remove the default 200px max */
+    white-space: nowrap;
+
+    color: var(--color-black);
+
+    width: fit-content;
+    height: fit-content;
+    transition: none !important;
+    //transition: 0.2s $ease-out-expo !important;
+    box-shadow: none;
+}

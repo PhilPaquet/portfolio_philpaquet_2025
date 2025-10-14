@@ -18,6 +18,12 @@
 
     <link rel="stylesheet" href="styles/main.css" />
 
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/shift-away-subtle.css" />
+    
+  
+
+
     <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
     <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
@@ -27,7 +33,8 @@
 
 
     <!-- Ce script est utile pour que mes boutons de header fonctionnent-->
-    <script>
+
+        <script>
       // Ce script s'exécute IMMÉDIATEMENT, avant tout defer
       (function() {
         if (!window.location.hash) return;
@@ -52,6 +59,10 @@
       // À décommenter lorsque rendu dans le fichier .php pour que les icônes fonctionnent dans WP
       // iconsPath = '<?php bloginfo('template_url') ?>/dist/';
     </script>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
     <script src="scripts/main.js" defer></script>
   </head>
 
