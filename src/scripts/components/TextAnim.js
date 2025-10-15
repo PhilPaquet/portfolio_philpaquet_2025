@@ -56,7 +56,7 @@ export default class TextAnim {
 
   initAnim() {
     gsap.set(this.split.chars, {
-      yPercent: 'random([-100, 100])',
+      yPercent: -100,
       autoAlpha: 0,
     });
   }

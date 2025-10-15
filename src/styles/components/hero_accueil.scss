@@ -1,7 +1,7 @@
 .hero_accueil {
     //min-height: 100vh;
     padding-top: calc(var(--spacing-xl) + 50px);
-    width: 100vw;
+    max-width: 100vw;
     .wrapper {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));

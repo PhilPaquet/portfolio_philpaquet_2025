@@ -71,3 +71,8 @@ strong {
 span::selection {
     background: red;
 }
+
+.split-chars {
+    display: inline-block;
+    will-change: transform, opacity;
+}
