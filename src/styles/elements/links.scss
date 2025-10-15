@@ -19,6 +19,11 @@ a {
     width: fit-content;
     height: fit-content;
 
+    /* Media query */
+    @media screen and (max-width: $breakpoint-md) {
+        padding: 15px 30px;
+    }
+
     &::after {
         content: '';
         background-color: var(--color-black);
@@ -82,6 +87,11 @@ a {
             transform: translate(10px, 10px);
         }
     }
+
+    /* Media query */
+    @media screen and (max-width: $breakpoint-md) {
+        padding: 15px 30px;
+    }
 }
 
 .btn_fleche {
@@ -139,6 +149,9 @@ a {
         font-size: 40px;
         display: block;
         transition: transform 0.2s $ease-out-expo;
+        @media screen and (max-width: $breakpoint-md) {
+            font-size: 30px;
+        }
     }
 
     h4 {

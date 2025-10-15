@@ -1,11 +1,17 @@
 .hero_accueil {
     //min-height: 100vh;
     padding-top: calc(var(--spacing-xl) + 50px);
+    width: 100vw;
     .wrapper {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-template-rows: 3fr;
         grid-column-gap: var(--spacing-md);
+
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            grid-column-gap: 20px;
+        }
 
         .hero_accueil__prenom {
             grid-column: 2 / span 11;
@@ -15,6 +21,10 @@
             pointer-events: none;
 
             z-index: 5;
+
+            @media screen and (max-width: $breakpoint-sm) {
+                grid-column: 1 / span 6;
+            }
 
             .points {
                 width: 400px; //largeur des points
@@ -29,6 +39,10 @@
 
                 /* Optional: repeat in both directions */
                 background-repeat: repeat;
+
+                @media screen and (max-width: $breakpoint-sm) {
+                    display: none;
+                }
             }
         }
 
@@ -39,6 +53,14 @@
             width: 100vw;
 
             pointer-events: none;
+
+            /*Media query*/
+            @media screen and (max-width: $breakpoint-sm) {
+                grid-column: 2 / span 5;
+                margin-top: 60px;
+                grid-row: 1;
+                width: 100%;
+            }
         }
 
         .hero_accueil__media_container {
@@ -46,6 +68,11 @@
             grid-row: 1 / span 2;
 
             position: relative;
+
+            @media screen and (max-width: $breakpoint-sm) {
+                grid-column: 1 / span 6;
+                margin-top: -25px;
+            }
 
             .hero_accueil__media {
                 --margin: 125px;
@@ -71,9 +98,12 @@
 
             .icon_hero_accueil {
                 position: absolute;
-                bottom: -75px;
-                right: -100px;
+                bottom: -50px;
+                right: -50px;
                 font-size: 500px;
+                @media screen and (max-width: $breakpoint-sm) {
+                    font-size: 200px;
+                }
             }
         }
     }
@@ -85,10 +115,20 @@
     h3 {
         align-self: flex-end;
         padding-bottom: var(--spacing-lg);
+        @media screen and (max-width: $breakpoint-sm) {
+            padding-bottom: var(--spacing-md);
+        }
     }
     grid-column: span 6;
     grid-column-end: 13;
     margin-top: 425px;
 
     z-index: -5;
+
+    /*Media query*/
+    @media screen and (max-width: $breakpoint-sm) {
+        grid-column: 1;
+        grid-column-end: 7;
+        margin-top: 25px;
+    }
 }

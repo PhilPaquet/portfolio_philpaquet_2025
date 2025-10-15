@@ -40,6 +40,9 @@
 .grille_projets_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .projet_container {
@@ -50,6 +53,9 @@
         position: relative;
         overflow: hidden;
         border-radius: 25px;
+        @media screen and (max-width: $breakpoint-sm) {
+            border-radius: 10px;
+        }
         &::after {
             content: '';
             position: absolute;
@@ -59,6 +65,10 @@
             height: 100%;
             border: 3px solid var(--color-black);
             border-radius: 25px; //À AJUSTER EN MOBILE
+
+            @media screen and (max-width: $breakpoint-sm) {
+                border-radius: 10px;
+            }
         }
         &:hover {
             .projet__content {

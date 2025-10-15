@@ -8,5 +8,13 @@
         background-color: var(--color-bg-primary);
         border-radius: 25px;
         padding: 0 var(--spacing-lg);
+        @media screen and (max-width: $breakpoint-sm) {
+            padding: 0 var(--spacing-sm);
+            border-radius: 10px;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        border-radius: 10px;
     }
 }

@@ -72,5 +72,6 @@ export default class Header {
 
   onToggleNav() {
     this.html.classList.toggle('nav-is-active');
+    console.log('ahh');
   }
 }
