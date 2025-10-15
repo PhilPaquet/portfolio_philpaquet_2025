@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .grille_projets_accueil {
+    max-width: 100vw;
     h2 {
         margin-bottom: var(--spacing-xl);
         display: inline-block;
@@ -48,6 +49,10 @@
 .projet_container {
     padding: 0 var(--spacing-lg);
 
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: 0;
+    }
+
     .projet {
         display: block;
         position: relative;
@@ -80,6 +85,9 @@
     .projet__media {
         aspect-ratio: 16/9;
         overflow: hidden;
+        @media screen and (max-width: $breakpoint-sm) {
+            aspect-ratio: 1/1;
+        }
         img {
             object-fit: cover;
             display: block;
@@ -96,6 +104,11 @@
         transition: transform 0.2s $ease-out-expo;
 
         transform: translateY(100%);
+
+        @media screen and (max-width: $breakpoint-sm) {
+            aspect-ratio: 1/1;
+            transform: translateY(50%);
+        }
 
         h4 {
             padding-top: 30px;
@@ -131,6 +144,9 @@
 
         background-repeat: repeat;
     }
+    @media screen and (max-width: $breakpoint-sm) {
+        display: none;
+    }
 }
 
 .pattern_cercle {
@@ -142,6 +158,9 @@
         font-size: 400px;
         color: var(--color-black);
         z-index: -5;
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+        display: none;
     }
 }
 
@@ -155,5 +174,8 @@
         font-size: 300px;
         color: var(--color-black);
         z-index: -5;
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+        display: none;
     }
 }
