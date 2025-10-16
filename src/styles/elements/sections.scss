@@ -4,10 +4,19 @@
 
 .section {
     padding: var(--spacing-xl) 0;
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: var(--spacing-lg) 0;
+    }
 }
 .section_notop {
     padding: 0 0 var(--spacing-xl) 0;
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: 0 0 var(--spacing-lg) 0;
+    }
 }
 .section_nobottom {
     padding: var(--spacing-xl) 0 0 0;
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: var(--spacing-lg) 0 0 0;
+    }
 }

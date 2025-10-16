@@ -25,12 +25,23 @@ export default class Scroller {
   }
 
   init() {
-    this.smoother = ScrollSmoother.create({
-      smooth: 1,
-      effects: true,
-      smoothTouch: 0.1,
-      ease: 'expo.out',
-    });
+    if (window.innerWidth > 768) {
+      this.smoother = ScrollSmoother.create({
+        smooth: 1,
+        effects: true,
+        smoothTouch: 0.1,
+        ease: 'expo.out',
+      });
+    }
+
+    if (window.innerWidth < 768) {
+      this.smoother = ScrollSmoother.create({
+        smooth: 1,
+        effects: false,
+        smoothTouch: 0.1,
+        ease: 'expo.out',
+      });
+    }
 
     // Ancres sur la même page
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

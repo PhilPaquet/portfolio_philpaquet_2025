@@ -1,5 +1,7 @@
 .contact {
     margin-top: var(--spacing-lg);
+
+    max-width: 100vw;
 }
 
 .hero_contact {
@@ -24,6 +26,9 @@
 
         /* Optional: repeat in both directions */
         background-repeat: repeat;
+        @media screen and (max-width: $breakpoint-sm) {
+            display: none;
+        }
     }
 }
 
