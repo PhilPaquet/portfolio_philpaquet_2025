@@ -19,7 +19,7 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-md);
+            gap: var(--spacing-sm);
             justify-content: center;
             margin: 0;
             height: 100%;
@@ -28,8 +28,8 @@
                 align-items: center;
                 gap: var(--spacing-md);
 
-                svg {
-                    color: var(--color-primary);
+                p {
+                    margin: 0;
                 }
             }
         }

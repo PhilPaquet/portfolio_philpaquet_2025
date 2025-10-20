@@ -1,0 +1,25 @@
+/* ==========================================================================
+   STYLES / COMPONENTS
+   ========================================================================== */
+
+.styles_projet {
+    .wrapper {
+        .styles__couleurs {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            .styles__couleur {
+                aspect-ratio: 1/1;
+                width: 200px;
+            }
+            p {
+                margin-top: var(--spacing-sm);
+            }
+        }
+        .styles__polices {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg);
+        }
+    }
+}
