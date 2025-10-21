@@ -21,5 +21,11 @@
             justify-content: center;
             margin-bottom: var(--spacing-lg);
         }
+
+        .styles_projet__text {
+            margin-top: var(--spacing-lg);
+            display: flex;
+            gap: var(--spacing-md);
+        }
     }
 }
