@@ -27,6 +27,7 @@ class TippyHelper {
     document.addEventListener('DOMContentLoaded', () => {
       tippy('[data-tippy-content]', {
         theme: 'custom',
+        allowHTML: true,
         //animation: 'shift-away-subtle',
         arrow: false,
         followCursor: true,

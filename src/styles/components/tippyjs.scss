@@ -25,3 +25,23 @@
     //transition: 0.2s $ease-out-expo !important;
     box-shadow: none;
 }
+
+.icon_tippy {
+    font-size: 35px;
+    margin-bottom: 5px;
+    svg {
+        display: block;
+    }
+}
+
+.tippycontent {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.tippyelement {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
