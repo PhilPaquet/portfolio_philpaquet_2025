@@ -10,6 +10,7 @@ export default class Header {
     this.html = document.documentElement;
     this.init();
     this.initNavMobile();
+    this.initCloseNavMobile();
   }
 
   init() {
@@ -72,6 +73,18 @@ export default class Header {
 
   onToggleNav() {
     this.html.classList.toggle('nav-is-active');
-    console.log('ahh');
+  }
+
+  initCloseNavMobile() {
+    const links = this.element.querySelectorAll('a');
+
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i];
+      link.addEventListener('click', () => {
+        if (this.html.classList.contains('nav-is-active')) {
+          this.html.classList.remove('nav-is-active');
+        }
+      });
+    }
   }
 }
