@@ -35,3 +35,10 @@
         }
     }
 }
+
+.credits_large {
+    margin-top: var(--spacing-lg);
+    .credits__container {
+        grid-column: 1 / span 10 !important;
+    }
+}

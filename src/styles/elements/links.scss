@@ -96,8 +96,12 @@ a {
 
 .btn_fleche {
     display: flex;
-    flex-direction: column;
+    //flex-direction: column;
     width: fit-content;
+
+    --icon_size: 40px;
+    --gap_size: var(--spacing-md);
+    --mask_width: calc(var(--icon_size) + (var(--gap_size) / 1.5));
 
     position: relative;
     &::after {
@@ -110,15 +114,15 @@ a {
         background-color: var(--color-white);
 
         height: 6px;
-        width: 25%;
-        transition: transform 0.2s $ease-in-out-expo;
+        width: var(--mask_width);
+        transition: left 0.2s $ease-in-out-expo;
 
-        transform: translateX(300%);
+        left: calc(100% - (var(--mask_width)));
     }
 
     &:hover {
         &::after {
-            transform: translateX(0);
+            left: 0;
         }
 
         .btn_fleche__container {
@@ -144,9 +148,9 @@ a {
 .btn_fleche__container {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--gap_size);
     .icon {
-        font-size: 40px;
+        font-size: var(--icon_size);
         display: block;
         transition: transform 0.2s $ease-out-expo;
         @media screen and (max-width: $breakpoint-md) {
@@ -160,12 +164,9 @@ a {
 }
 
 .btn_fleche_credits {
-    display: flex;
-    //flex-direction: column;
-    width: fit-content;
-
-    align-items: center;
-    gap: var(--spacing-md);
+    --icon_size: 30px;
+    --gap_size: var(--spacing-md);
+    --mask_width: calc(var(--icon_size) + (var(--gap_size) / 1.5));
 
     position: relative;
     &::after {
@@ -178,15 +179,15 @@ a {
         background-color: var(--color-white);
 
         height: 6px;
-        width: 25%;
-        transition: transform 0.2s $ease-in-out-expo;
+        width: var(--mask_width);
+        transition: left 0.2s $ease-in-out-expo;
 
-        transform: translateX(300%);
+        left: calc(100% - (var(--mask_width)));
     }
 
     &:hover {
         &::after {
-            transform: translateX(0);
+            left: 0;
         }
     }
 
@@ -204,8 +205,14 @@ a {
 }
 
 .btn_fleche_credits__container {
+    display: flex;
+    //flex-direction: column;
+    width: fit-content;
+
+    align-items: center;
+    gap: var(--gap_size);
     .icon {
-        font-size: 30px;
+        font-size: var(--icon_size);
         display: block;
         transition: transform 0.2s $ease-out-expo;
         @media screen and (max-width: $breakpoint-md) {
