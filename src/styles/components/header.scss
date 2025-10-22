@@ -9,6 +9,8 @@
 
     pointer-events: none;
 
+    overflow-x: hidden;
+
     .wrapper {
         max-width: calc($breakpoint-lg + 200px);
         display: flex;
