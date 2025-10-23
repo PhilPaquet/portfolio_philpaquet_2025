@@ -36,6 +36,7 @@
 
     @media screen and (max-width: $breakpoint-sm) {
         height: 600px;
+        margin-top: var(--spacing-sm);
     }
 
     .text_footer {

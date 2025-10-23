@@ -7,10 +7,17 @@
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-column-gap: var(--spacing-md);
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            grid-column-gap: 20px;
+        }
     }
 
     .credits__container {
         grid-column: 2 / span 10;
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-column: 1 / span 6;
+        }
     }
     .credit__nav {
         height: 100%;
@@ -23,10 +30,19 @@
             justify-content: center;
             margin: 0;
             height: 100%;
+            @media screen and (max-width: $breakpoint-sm) {
+                padding: 0;
+            }
             li {
                 display: flex;
                 align-items: center;
                 gap: var(--spacing-md);
+
+                @media screen and (max-width: $breakpoint-sm) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: var(--spacing-xs);
+                }
 
                 p {
                     margin: 0;
@@ -40,5 +56,8 @@
     margin-top: var(--spacing-lg);
     .credits__container {
         grid-column: 1 / span 10 !important;
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-column: 1 / span 6 !important;
+        }
     }
 }

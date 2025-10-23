@@ -9,6 +9,10 @@
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-column-gap: var(--spacing-md);
         //grid-row-gap: var(--spacing-md);
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            grid-column-gap: 20px;
+        }
     }
 }
 
@@ -17,6 +21,12 @@
     grid-row: 1;
     height: 1000px;
     overflow: hidden;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        grid-column: 1 / span 6;
+        height: 250px;
+    }
+
     .hero_thumbnail {
         height: 100%;
         img {
@@ -29,10 +39,16 @@
 
 .hero_projet__content_container {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-column: 1 / span 7;
     grid-column-gap: var(--spacing-lg);
+    width: 100%;
 
-    width: $breakpoint-lg;
+    @media screen and (max-width: $breakpoint-sm) {
+        grid-column: 1 / span 6;
+        display: flex;
+        flex-direction: column;
+        margin-top: var(--spacing-md);
+    }
 }
 
 .hero_projet__content {
@@ -41,12 +57,20 @@
 
     h4 {
         padding: var(--spacing-lg) 0;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-column: 1 / span 6;
+            padding: var(--spacing-sm) 0;
+        }
     }
     .icons_projet_container {
         display: flex;
         align-items: stretch;
         justify-content: space-between;
         padding: var(--spacing-lg) 0;
+        @media screen and (max-width: $breakpoint-sm) {
+            padding: var(--spacing-sm) 0;
+        }
 
         .icons_projet {
             display: flex;
@@ -56,6 +80,10 @@
                 padding: 10px;
                 width: 100px;
                 height: 100px;
+                @media screen and (max-width: $breakpoint-sm) {
+                    width: 75px;
+                    height: 75px;
+                }
             }
         }
 
@@ -76,6 +104,10 @@
 
             /* Optional: repeat in both directions */
             background-repeat: repeat;
+
+            @media screen and (max-width: $breakpoint-sm) {
+                display: none;
+            }
         }
     }
 }
@@ -83,5 +115,8 @@
     grid-column: 1 / span 6;
     h3 {
         padding: var(--spacing-md) 0;
+        @media screen and (max-width: $breakpoint-sm) {
+            padding-bottom: var(--spacing-sm);
+        }
     }
 }

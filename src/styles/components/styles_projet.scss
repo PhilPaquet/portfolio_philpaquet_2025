@@ -8,9 +8,19 @@
             display: flex;
             justify-content: center;
             gap: var(--spacing-xl);
+
+            @media screen and (max-width: $breakpoint-sm) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
             .styles__couleur {
                 aspect-ratio: 1/1;
                 width: 200px;
+
+                @media screen and (max-width: $breakpoint-sm) {
+                    width: 100%;
+                }
             }
             p {
                 margin-top: var(--spacing-sm);
@@ -26,6 +36,10 @@
             margin-top: var(--spacing-lg);
             display: flex;
             gap: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+            @media screen and (max-width: $breakpoint-sm) {
+                flex-direction: column;
+            }
         }
     }
 }

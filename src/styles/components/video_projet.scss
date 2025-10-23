@@ -7,8 +7,16 @@
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-column-gap: var(--spacing-md);
+
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            grid-column-gap: 20px;
+        }
         .video_container {
             grid-column: 2 / span 10;
+            @media screen and (max-width: $breakpoint-sm) {
+                grid-column: 1 / span 6;
+            }
             .video {
                 aspect-ratio: 16/9;
                 overflow: hidden;
@@ -16,6 +24,10 @@
                 align-self: center;
                 cursor: pointer;
                 position: relative;
+
+                @media screen and (max-width: $breakpoint-sm) {
+                    max-width: 100%;
+                }
 
                 .icon_play {
                     opacity: 0;

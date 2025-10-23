@@ -7,13 +7,20 @@
     grid-template-rows: 2fr;
     grid-column-gap: var(--spacing-lg);
     grid-row-gap: var(--spacing-lg);
-
     margin-bottom: var(--spacing-xl);
+
+    @media screen and (max-width: $breakpoint-sm) {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 20px;
+    }
 
     h2 {
         //grid-column: 2;
         grid-row: 1;
         grid-column: 1 / span 13;
+        @media screen and (max-width: $breakpoint-sm) {
+            grid-column: 1 / span 6;
+        }
     }
 
     h3 {
@@ -22,6 +29,10 @@
 
     .etape_projet__nav {
         padding-top: var(--spacing-md);
+        @media screen and (max-width: $breakpoint-sm) {
+            padding-top: 0;
+            padding-bottom: var(--spacing-sm);
+        }
     }
 }
 
@@ -37,6 +48,12 @@
     overflow: hidden;
 
     height: 75vh;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        grid-column: 1 / span 6;
+        grid-row: 3;
+        height: 40vh;
+    }
 
     .etape__media_image {
         aspect-ratio: 16/9;
@@ -67,10 +84,16 @@
         justify-content: center;
         margin: 0;
         height: 100%;
+        @media screen and (max-width: $breakpoint-sm) {
+            gap: var(--spacing-sm);
+        }
         li {
             display: flex;
             align-items: center;
             gap: var(--spacing-md);
+            @media screen and (max-width: $breakpoint-sm) {
+                gap: var(--spacing-sm);
+            }
 
             svg {
                 color: var(--color-primary);
