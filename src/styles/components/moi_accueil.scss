@@ -1,6 +1,10 @@
 .moi_accueil {
     margin-top: var(--spacing-xl);
 
+    @media screen and (max-width: $breakpoint-sm) {
+        margin-top: var(--spacing-md);
+    }
+
     max-width: 100vw;
     .wrapper {
         display: grid;

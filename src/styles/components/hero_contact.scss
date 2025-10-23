@@ -8,6 +8,10 @@
     h2 {
         font-family: var(--font-primary);
         font-size: var(--font-size-h1);
+
+        @media screen and (max-width: $breakpoint-sm) {
+            margin-top: var(--spacing-md);
+        }
     }
     display: flex;
     justify-content: space-between;
