@@ -5,7 +5,7 @@
 .grille_projets_accueil {
     max-width: 100vw;
     h2 {
-        margin-bottom: var(--spacing-xl);
+        margin-bottom: var(--spacing-md);
         display: inline-block;
         width: auto;
     }
@@ -33,7 +33,7 @@
     flex-direction: column;
     gap: 150px;
     @media screen and (max-width: $breakpoint-sm) {
-        gap: var(--spacing-md);
+        gap: var(--spacing-xl);
     }
 }
 /*
@@ -61,8 +61,10 @@
         position: relative;
         overflow: hidden;
         border-radius: 25px;
+        z-index: 1;
         @media screen and (max-width: $breakpoint-sm) {
             border-radius: 10px;
+            overflow: visible;
         }
         &::after {
             content: '';
@@ -91,9 +93,6 @@
     .projet__media {
         aspect-ratio: 16/9;
         overflow: hidden;
-        @media screen and (max-width: $breakpoint-sm) {
-            aspect-ratio: 1/1;
-        }
         img {
             object-fit: cover;
             display: block;
@@ -112,22 +111,23 @@
         transform: translateY(100%);
 
         @media screen and (max-width: $breakpoint-sm) {
-            aspect-ratio: 1/1;
             transform: translateY(50%);
+            z-index: 5;
         }
 
-        h4 {
+        .titre_container {
             padding-top: 30px;
-        }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-        .btn_fleche__container {
-            display: none;
+            .icon {
+                font-size: 30px;
+                display: none;
+                position: unset !important;
 
-            @media screen and (max-width: $breakpoint-sm) {
-                display: flex;
-                transform: translateY(-20px);
-                svg {
-                    margin-top: var(--spacing-md);
+                @media screen and (max-width: $breakpoint-sm) {
+                    display: block;
                 }
             }
         }
@@ -136,6 +136,12 @@
     .projet__content_text {
         display: flex;
         justify-content: space-between;
+    }
+}
+
+.projets_container_right {
+    @media screen and (max-width: $breakpoint-sm) {
+        margin-top: var(--spacing-xl);
     }
 }
 
