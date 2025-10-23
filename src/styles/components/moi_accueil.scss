@@ -93,6 +93,13 @@
         }
     }
 
+    .btn_fleche{
+        margin-top: 30px;
+        @media screen and (max-width: $breakpoint-sm) {
+            margin-top: 15px;
+        }
+    }
+
     html:not(.has-js) & {
         //Ajoute la marge si la page n' pas de javascript
         margin-top: 100px;
