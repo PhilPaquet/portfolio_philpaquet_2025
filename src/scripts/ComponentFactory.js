@@ -2,6 +2,7 @@ import Header from './components/Header.js';
 import Scroller from './components/Scroller.js';
 import YouTube from './components/YouTube.js';
 import Form from './components/Form.js';
+import Modale from './components/Modale.js';
 //import TextAnim from './components/TextAnim.js';
 
 export default class ComponentFactory {
@@ -12,6 +13,7 @@ export default class ComponentFactory {
       Scroller,
       YouTube,
       Form,
+      Modale,
       //TextAnim,
     };
     this.init();
