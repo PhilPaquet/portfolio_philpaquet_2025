@@ -23,6 +23,7 @@ export default class Form {
 
     if (this.validate()) {
       console.log('success');
+      this.element.submit();
       //envoi ajax du formulaire
       this.showConfirmation();
     } else {
