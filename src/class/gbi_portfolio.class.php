@@ -16,8 +16,8 @@ function var_dump_ret($mixed = null) {
 
 	class tim_form{
 
-        const COURRIEL_CC = 'portfolio_tim@imbert.ca';
-        const COURRIEL_FROM = 'Portfolio en ligne - Tim <no-reply-tim@imbert.ca>' ;
+        const COURRIEL_CC = 'info@philippepaquet.ca';
+        const COURRIEL_FROM = 'Portfolio de Philippe Paquet <info@philippepaquet.ca>';
 
 
         public $tim_form_nom = '';		
@@ -33,38 +33,16 @@ function var_dump_ret($mixed = null) {
                 }
             }
         }
- 
+
     /* ================================================= */
     
     public function afficherHTML($msg = '') {
 
-        // Date et heure actuelles
-        $datetime = date('Y-m-d H:i:s');
 
         $html = "
         $msg
-        <p>Date: $datetime</p>
-        <p><strong>Bonjour {$this->tim_form_nom},</strong><br><br>
-        Nous avons bien reçu votre commentaire.<br><br>
-
+        <h2 class='confirmation__form'>Merci !</h2><br>";
         
-        
-        MERCI et au plaisir,<br><br>
-        
-        L’équipe du Portfolio de ...... <br><br>
-
-        <strong> Voici les détails de  votre message.</strong></p>";
-
-        $html .= "<h3>Identification de l'usager</h3>";
-
-        $html .= "<span class=\"descriptions\" >Nom:</span> <span class=\"informations\">{$this->tim_form_nom}</span><br>";
-
-        $html .= "<span class=\"descriptions\" >Courriel:</span> <span class=\"informations\">{$this->tim_form_courriel}</span></p>";
-        
-        $html .= "<h3>Message:</h3>";
-        $html .= "<p><span class=\"descriptions\" >Message:</span> <span class=\"informations\">{$this->tim_form_commentaires}</span><br>";
-        
-
 
         return '<div class="tim_form">'. $html . '</div>';
     }
@@ -73,8 +51,8 @@ function var_dump_ret($mixed = null) {
     
     public function afficherHTMLCourriel() {
 
-        // Date et heure actuelles
-        $datetime = date('Y-m-d H:i:s');
+        // Date et actuelle
+        $datetime = date('Y-m-d');
 
 
         $html = "
@@ -97,42 +75,26 @@ function var_dump_ret($mixed = null) {
             }
             .tim_form span.informations {
                 display: inline-block;
-                font-weight: 700;
             }
 
         </style>
          </head>
         <body>
             <div class='tim_form'>
-                <h1>Bonjour,</h1>
-                <p>Ceci est un test d\'envoi d\'email en <strong>format HTML</strong> avec la fonction mail() de PHP.</p>
-                <p>Merci de votre attention.</p>
-            
-
-                
-                <p>Date: $datetime</p>
-                <p><strong>Bonjour {$this->tim_form_nom},</strong><br><br>
-                Nous avons bien reçu votre commentaire.<br><br>
+                <h3>Salut {$this->tim_form_nom},</h3>
+                <p>Merci pour ton message !<br><br>
 
                 
                 
-                MERCI et au plaisir,<br><br>
-                
-                L’équipe du Portfolio de ...... <br><br>
+                Je te répondrai dès que possible.<br><br>
 
                 <strong> Voici les détails de  votre message.</strong></p>";
 
-        $html .= "<h3>Identification de l'usager</h3>";
-
-        $html .= "<span class=\"descriptions\" >Nom:</span> <span class=\"informations\">{$this->tim_form_nom}</span><br>";
-
-        $html .= "<span class=\"descriptions\" >Courriel:</span> <span class=\"informations\">{$this->tim_form_courriel}</span></p>";
+        $html .= "<h3>Ton courriel:</h3>";
+        $html .= "<p><span class=\"informations\">{$this->tim_form_courriel}</span></p>";
         
-        $html .= "<h3>Message:</h3>";
-        $html .= "<p><span class=\"descriptions\" >Message:</span> <span class=\"informations\">{$this->tim_form_commentaires}</span><br>";
-
-        $html .= "<p>Date et heure de la demande:</p>";
-        $html .= "<p><span class=\"informations\">{$datetime}</span></p>";
+        $html .= "<h3>Ton message:</h3>";
+        $html .= "<p><span class=\"informations\">{$this->tim_form_commentaires}</span><br>";
         
         $html .= "</div>";
 
@@ -155,8 +117,7 @@ function var_dump_ret($mixed = null) {
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
         // En-tête supplémentaire (expéditeur)
-        $headers .= 'From: Portfolio en ligne - Tim QA <no-reply-tim@imbert.ca>' . "\r\n";
-        $headers .= 'Reply-To: expediteur@example.com' . "\r\n";
+        $headers .= 'From: Portfolio de Philippe Paquet <info@philippepaquet.ca>' . "\r\n";
 
 
         // Ajouter les adresses en CC et BCC
