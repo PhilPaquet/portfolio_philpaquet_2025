@@ -125,10 +125,21 @@
    BTN burger
    ========================================================================== */
 
+.btn_x_mobile {
+    display: none;
+}
+
 .header__toggle {
     display: none;
 
     .nav-is-active & {
+        .btn_menu_mobile {
+            display: none;
+        }
+
+        .btn_x_mobile {
+            display: flex;
+        }
     }
 
     /* Media query */
