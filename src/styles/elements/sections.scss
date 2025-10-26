@@ -3,18 +3,21 @@
    ========================================================================== */
 
 .section {
+    pointer-events: all;
     padding: var(--spacing-xl) 0;
     @media screen and (max-width: $breakpoint-sm) {
         padding: var(--spacing-lg) 0;
     }
 }
 .section_notop {
+    pointer-events: all;
     padding: 0 0 var(--spacing-xl) 0;
     @media screen and (max-width: $breakpoint-sm) {
         padding: 0 0 var(--spacing-lg) 0;
     }
 }
 .section_nobottom {
+    pointer-events: all;
     padding: var(--spacing-xl) 0 0 0;
     @media screen and (max-width: $breakpoint-sm) {
         padding: var(--spacing-lg) 0 0 0;
