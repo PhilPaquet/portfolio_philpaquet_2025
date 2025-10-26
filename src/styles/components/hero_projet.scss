@@ -30,9 +30,28 @@
     .hero_thumbnail {
         height: 100%;
         img {
-            height: 100%;
             object-fit: cover;
+            height: 100%;
+            width: 100%;
             display: block;
+        }
+
+        .hero_desktop {
+            display: block;
+        }
+
+        .hero_mobile {
+            display: none;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            .hero_desktop {
+                display: none;
+            }
+
+            .hero_mobile {
+                display: block;
+            }
         }
     }
 }
