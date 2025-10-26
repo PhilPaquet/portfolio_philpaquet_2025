@@ -25,6 +25,15 @@
     padding-bottom: var(--spacing-lg);
     //grid-template-rows: repeat(2, 1fr);
 
+    opacity: 0.25;
+    transition: opacity 0.2s $ease-out-expo;
+    pointer-events: none;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
     @media screen and (max-width: $breakpoint-sm) {
         grid-template-columns: repeat(6, minmax(0, 1fr));
         grid-column-gap: 20px;
@@ -101,6 +110,18 @@
             cursor: pointer;
             appearance: none;
             -webkit-appearance: none;
+
+            transition: opacity 0.2s $ease-out-expo;
+
+            &.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            &.inactive {
+                opacity: 0;
+                pointer-events: none;
+            }
 
             &:hover,
             &:focus,

@@ -2,12 +2,37 @@ export default class Form {
   constructor(element) {
     this.element = element;
     this.formElements = this.element.elements;
+
+    // Les trois champs principaux
+    this.inputs = {
+      fullname: this.element.querySelector('#fullname'),
+      email: this.element.querySelector('#email'),
+      message: this.element.querySelector('#message'),
+    };
+
+    // Bouton d’envoi
+    this.submitButton = this.element.querySelector('.btn_fleche');
+
     this.init();
   }
 
   init() {
     this.element.setAttribute('novalidate', '');
 
+    // Seulement le premier champ actif au départ
+    this.inputs.fullname.closest('.input').classList.add('active');
+
+    // Écouteurs
+    this.inputs.fullname.addEventListener('input', () => this.handleProgress());
+    this.inputs.email.addEventListener('input', () => this.handleProgress());
+    this.inputs.message.addEventListener('input', () =>
+      this.handleButtonState()
+    );
+
+    // Initialiser le bouton à l’état inactif
+    this.handleButtonState();
+
+    // Validation classique
     for (let i = 0; i < this.formElements.length; i++) {
       const input = this.formElements[i];
       if (input.required) {
@@ -18,73 +43,81 @@ export default class Form {
     this.element.addEventListener('submit', this.onSubmit.bind(this));
   }
 
+  handleProgress() {
+    const { fullname, email, message } = this.inputs;
+
+    // fullname valide → active email
+    if (fullname.validity.valid && fullname.value.trim() !== '') {
+      email.closest('.input').classList.add('active');
+    } else {
+      email.closest('.input').classList.remove('active');
+      message.closest('.input').classList.remove('active');
+      this.submitButton.classList.remove('active');
+      this.submitButton.classList.add('inactive');
+      return;
+    }
+
+    // email valide → active message
+    if (email.validity.valid && email.value.trim() !== '') {
+      message.closest('.input').classList.add('active');
+    } else {
+      message.closest('.input').classList.remove('active');
+    }
+
+    this.handleButtonState();
+  }
+
+  handleButtonState() {
+    const messageValue = this.inputs.message.value.trim();
+
+    if (messageValue.length > 0) {
+      this.submitButton.classList.add('active');
+      this.submitButton.classList.remove('inactive');
+    } else {
+      this.submitButton.classList.add('inactive');
+      this.submitButton.classList.remove('active');
+    }
+  }
+
   onSubmit(event) {
     event.preventDefault();
     if (this.validate()) {
       console.log('success');
-      // Envoi AJAX du formulaire
       const formData = new FormData(this.element);
+
       fetch(this.element.action, {
         method: this.element.method || 'POST',
         body: formData,
       })
         .then((response) => response.text())
         .then((html) => {
-          console.log('HTML reçu:', html); // DEBUG
-
-          // Parser le HTML complet retourné
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
-
-          // Extraire SEULEMENT le div avec la classe "tim_form"
           const confirmationMessage = doc.querySelector('.tim_form');
 
-          console.log('Message trouvé:', confirmationMessage); // DEBUG
-
           if (confirmationMessage) {
-            // Trouver le conteneur parent du formulaire
             const container = this.element.closest(
               '.formulaire_contact__container'
             );
-
-            console.log('Conteneur trouvé:', container); // DEBUG
-
             if (container) {
-              // Remplacer tout le contenu du conteneur par le message
               container.innerHTML = confirmationMessage.outerHTML;
-              console.log('Conteneur remplacé!'); // DEBUG
             } else {
-              // Fallback : remplacer juste le formulaire
               this.element.outerHTML = confirmationMessage.outerHTML;
-              console.log('Formulaire remplacé!'); // DEBUG
             }
-          } else {
-            console.log(
-              'ERREUR: Message de confirmation non trouvé dans le HTML'
-            ); // DEBUG
           }
 
           this.showConfirmation();
         })
-        .catch((error) => {
-          console.error('Erreur:', error);
-        });
+        .catch((error) => console.error('Erreur:', error));
     } else {
       console.log('fail');
     }
   }
 
-  /**
-   * method description
-   * @return {boolean} status de la validation
-   */
-
   validate() {
     let isValid = true;
-
     for (let i = 0; i < this.formElements.length; i++) {
       const input = this.formElements[i];
-
       if (input.required && !this.validateInput(input)) {
         isValid = false;
       }
@@ -95,25 +128,34 @@ export default class Form {
   validateInput(inputEvent) {
     const input = inputEvent.currentTarget || inputEvent;
 
+    // Validation stricte de l’email
+    if (input.type === 'email') {
+      const strictEmailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{1,}$/;
+      if (!strictEmailPattern.test(input.value.trim())) {
+        input.setCustomValidity('Adresse courriel invalide');
+      } else {
+        input.setCustomValidity('');
+      }
+    }
+
     if (input.validity.valid) {
       this.removeError(input);
     } else {
       this.addError(input);
     }
+
     return input.validity.valid;
   }
 
   addError(input) {
     const container =
       input.closest('[data-input-container]') || input.closest('.input');
-    /*^^Cherche le plus proche parent avec la classe input ou data-input-container^^*/
     container.classList.add('error');
   }
 
   removeError(input) {
     const container =
       input.closest('[data-input-container]') || input.closest('.input');
-    /*^^Cherche le plus proche parent avec la classe input ou data-input-container^^*/
     container.classList.remove('error');
   }
 
