@@ -40,8 +40,23 @@ function var_dump_ret($mixed = null) {
 
 
         $html = "
+
+        <style>
+            
+        .tim_form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+                h2{
+                    padding-block: 150px; 
+                }
+
+            }
+
+        </style>
         $msg
-        <h2 class='confirmation__form'>Merci !</h2><br>";
+        <h2 class='confirmation__form'>Merci :)</h2><br>";
         
 
         return '<div class="tim_form">'. $html . '</div>';
