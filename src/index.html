@@ -17,7 +17,9 @@
                     <!--<div class="hero_accueil__container">-->
                     <div class="hero_accueil__media_container">
                         <a href="#projets" class="hero_accueil__media border">
-                            <video autoplay muted loop><source src="assets/videos/video_hero_accueil.mp4" type="video/mp4" /></video>
+                            <video playsinline webkit-playsinline autoplay muted loop>
+                                <source src="assets/videos/video_hero_accueil.mp4" type="video/mp4" />
+                            </video>
                         </a>
                         <svg class="icon icon_hero_accueil" data-speed="0.95">
                             <use href="#icon-icon_pattern_cercle"></use>
@@ -337,7 +339,7 @@
                 </div>
             </section>
 
-            <section id="contact" class="contact section_nobottom">
+            <section id="contact" class="contact section">
                 <div class="wrapper">
                     <div class="hero_contact" data-speed="1.05">
                         <h2 data-component="TextAnim">On jase ?</h2>

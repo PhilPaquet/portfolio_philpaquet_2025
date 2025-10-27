@@ -109,7 +109,7 @@ class Cursor {
 
     // Sélecteur pour tous les éléments interactifs
     const interactiveSelector =
-      'a, button, video, .input__label, .input__element, [role="button"], [data-component="Modale"]';
+      'a, button, video, .input__label, .input__element, [role="button"], [data-component="Modale"], [data-component="YouTube"]';
 
     // Fonction pour gérer le survol
     const handleMouseEnter = (e) => {
