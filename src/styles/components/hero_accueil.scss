@@ -82,12 +82,14 @@
                 z-index: 1;
                 height: calc(100% - var(--margin));
 
+                border-radius: 25px;
+
                 pointer-events: auto;
                 margin-top: var(--margin);
 
-                cursor: pointer;
-
                 overflow: hidden;
+
+                //cursor: pointer;
 
                 position: relative;
                 video {
