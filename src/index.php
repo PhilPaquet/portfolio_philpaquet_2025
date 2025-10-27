@@ -1,7 +1,3 @@
-<?php
-include "class/gbi_portfolio.class.php";
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
