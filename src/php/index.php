@@ -287,7 +287,7 @@ include "class/gbi_portfolio.class.php";
                                 </ul>
                             </nav>
                             <div class="btn_fleche_container">
-                                <a href="https://youtu.be/mlmosk8dfX0" target="_blank" class="btn_fleche">
+                                <a href="https://youtu.be/cvDp9ouBMoE" target="_blank" class="btn_fleche">
                                     <div class="btn_fleche__container">
                                         <h4>Présentation</h4>
                                         <svg class="icon">
