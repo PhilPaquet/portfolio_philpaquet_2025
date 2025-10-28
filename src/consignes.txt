@@ -1,0 +1,6 @@
+pas oublier, dans la version finale: 
+
+Changer les liens du header pour index.php et pas index.html
+Le header des pages projet doivent diriger vers index.php, mais le header de la page d'accueil doit diriger uniquement vers les anges (pas index.php#ancre juste #ancre)
+Enlever les lignes de codes qui fait référence au bloginfo dans la page d'accueil
+Ajouter le if/else dans mon form et changer les attributs name
