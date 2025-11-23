@@ -93,54 +93,43 @@ export default class Scroller {
   //PIN CONTROLS
 
   initPins() {
-    const pinnedItems = this.element.querySelectorAll('.js-pinned');
-    for (let i = 0; i < pinnedItems.length; i++) {
-      const pinnedItem = pinnedItems[i];
+    // Vérifie la condition avant d'activer la logique
+    if (window.matchMedia('(min-width: 769px)').matches) {
+      const pinnedItems = this.element.querySelectorAll('.js-pinned');
+      for (let i = 0; i < pinnedItems.length; i++) {
+        const pinnedItem = pinnedItems[i];
+        const imagePanels = pinnedItem.querySelectorAll('.js-image-panel');
+        const nbImagePanels = imagePanels.length - 1;
+        const buffer = 200;
 
-      const imagePanels = pinnedItem.querySelectorAll('.js-image-panel');
-      const nbImagePanels = imagePanels.length - 1;
-      const buffer = 200;
-
-      ScrollTrigger.create({
-        pin: pinnedItem,
-        trigger: pinnedItem,
-        start: 'center center',
-        end: () =>
-          '+=' + (pinnedItem.offsetHeight * nbImagePanels * 0.5 + buffer),
-        scrub: true,
-        //markers: true,
-        onToggle: (self) => {
-          if (self.isActive) {
-            pinnedItem.classList.add('is-pinned');
-          } else {
-            pinnedItem.classList.remove('is-pinned');
-          }
-        },
-      });
-
-      //console.log(pinnedItem);
-      /*
-      ScrollTrigger.create({
-        pin: pinnedItem,
-        trigger: pinnedItem,
-        start: 'center center',
-        end: () =>
-          '+=' + (pinnedItem.offsetHeight * nbImagePanels * 0.5 + buffer),
-        scrub: true,
-        //markers: true,
-      });
-*/
-      gsap.to(imagePanels, {
-        yPercent: -100 * nbImagePanels,
-        ease: 'none',
-        scrollTrigger: {
+        ScrollTrigger.create({
+          pin: pinnedItem,
           trigger: pinnedItem,
           start: 'center center',
           end: () =>
             '+=' + (pinnedItem.offsetHeight * nbImagePanels * 0.5 + buffer),
           scrub: true,
-        },
-      });
+          onToggle: (self) => {
+            if (self.isActive) {
+              pinnedItem.classList.add('is-pinned');
+            } else {
+              pinnedItem.classList.remove('is-pinned');
+            }
+          },
+        });
+
+        gsap.to(imagePanels, {
+          yPercent: -100 * nbImagePanels,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: pinnedItem,
+            start: 'center center',
+            end: () =>
+              '+=' + (pinnedItem.offsetHeight * nbImagePanels * 0.5 + buffer),
+            scrub: true,
+          },
+        });
+      }
     }
   }
 
@@ -150,8 +139,6 @@ export default class Scroller {
       const title = titles[i];
 
       const container = title.closest('.wrapper');
-
-      console.log(container);
 
       gsap.to(title, {
         x: () => container.offsetWidth - title.offsetWidth,
